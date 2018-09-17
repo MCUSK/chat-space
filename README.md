@@ -29,11 +29,13 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false, unique:true,index:true|
 |email|string|null: false, unique:ture|
+|password|string|null:false|
 
 ### Association
+- has many :members
 - has many :groups, through: :members
 - has many :chats
-- has many :members
+
 
 ## membersテーブル
 
@@ -50,22 +52,20 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null:false|
-|chat_id|integer|null:false, foreign_key: true|
+|name|string|null:false|
 
 ### Association
-- has_many :users, througth: :members
 - has_many :members
+- has_many :users, througth: :members
 - has_many :chat
 
 ## cahtsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text||
-|log|text||
+|image|string||
+|content|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|created_at|timestamp||
 
 ### Association
 - belongs_to :group
