@@ -24,16 +24,16 @@ Things you may want to cover:
 * ...
 
 
-## userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique:true|
+|name|string|null: false, unique:true,index:true|
 |email|string|null: false, unique:ture|
 
 ### Association
 - has many :groups, through: :members
-- has many :chat
-
+- has many :chats
+- has many :members
 
 ## membersテーブル
 
@@ -47,23 +47,26 @@ Things you may want to cover:
 - belongs_to :user
 
 
-## groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null:false|
 |chat_id|integer|null:false, foreign_key: true|
 
 ### Association
-- has many :users, througth: :members
-- belongs_to :chat
+- has_many :users, througth: :members
+- has_many :members
+- has_many :chat
 
-## cahtテーブル
+## cahtsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|log|text|null:false|
+|image|text||
+|log|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |created_at|timestamp||
 
 ### Association
 - belongs_to :group
+- belongs_to :user
