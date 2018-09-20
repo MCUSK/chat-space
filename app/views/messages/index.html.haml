@@ -15,7 +15,7 @@
       = render partial: "chatlog"
     .massage
       =form_for "", :html => {:class => "massage__form"} do |f|
-        =f.text_field :massage, class:"text_field",placeholder:"  type a massage"
+        =f.text_field :massage, class:"text_field",placeholder:"type a massage"
         %label.upload-label{for: "upload-icon"}
           %i.far.fa-image.fa-lg
           = f.file_field :image, id: "upload-icon"
