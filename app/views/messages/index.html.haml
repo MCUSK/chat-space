@@ -1,0 +1,22 @@
+/ %header チャットグループが作成されました
+#wrapper
+  = render partial: "sideber"
+
+  .right-contents
+    .groupber
+      .groupber__name
+        sampleグループ
+      .groupber__member
+        member
+      = link_to "Edit", "/",class:"edit btn"
+    .chat
+      = render partial: "chatlog"
+      = render partial: "chatlog"
+      = render partial: "chatlog"
+    .massage
+      =form_for "", :html => {:class => "massage__form"} do |f|
+        =f.text_field :massage, class:"text_field"
+        %label.upload-label{for: "upload-icon"}
+          %i.far.fa-image.fa-lg
+          = f.file_field :image, id: "upload-icon"
+        =f.submit :Send, class:"submit btn"
