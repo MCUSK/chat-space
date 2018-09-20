@@ -1,0 +1,14 @@
+.groupber{
+  padding: 35px 40px 0 40px;
+  background-color: #ffffff;
+  height: 100px;
+  &__name{
+    font-size: 20px;
+    color: #333333;
+  }
+  &__member{
+    padding-top: 15px;
+    font-size: 1px;
+    color: #999999
+  }
+}

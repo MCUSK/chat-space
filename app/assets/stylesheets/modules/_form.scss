@@ -1,0 +1,40 @@
+.massage{
+  @include middle;
+  height: 90px;
+  padding: 20px 40px 20px 50px;
+  width: 100%;
+  background-color: #DDDDDD;
+  display: table;
+  &__form{
+    width: 100%;
+  }
+}
+
+.text_field{
+  width: calc(100% - 141px);
+  height: 50px;
+  font-size: 16px;
+  outline: 0;
+  border: 0;
+  float: left;
+}
+
+#upload-icon {
+  display: none;
+}
+
+label{
+  float: left;
+  @include middle;
+  background-color: white;
+  height: 50px;
+  width: 31px;
+}
+.submit{
+  float: right;
+  margin-left: 15px;
+  height: 50px;
+  width: 95px;
+  background-color: $blue;
+  color: white;
+}

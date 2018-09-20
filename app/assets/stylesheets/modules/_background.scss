@@ -1,0 +1,19 @@
+html{
+  height: $full;
+}
+
+body{
+  height: $full;
+}
+
+#wrapper{
+  height: $full;
+  width: $full;
+  position: relative;
+}
+
+.right-contents{
+  height:$full;
+  width: calc(100% - 300px);
+  float: left;
+}
