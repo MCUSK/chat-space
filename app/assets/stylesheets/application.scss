@@ -1,2 +1,13 @@
-@import "./reset";
-@import "./reset";
+
+@import "reset";
+
+@import "variable";
+@import "mixin/mixin";
+
+@import "modules/background";
+@import "modules/header";
+@import "modules/sideber";
+@import "modules/groupber";
+@import "modules/chat";
+@import "modules/btn";
+@import "modules/form";
