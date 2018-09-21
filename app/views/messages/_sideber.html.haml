@@ -1,9 +1,9 @@
 .sideber
   .sideber__top
-    Name
+    = current_user.name
     .icon
       %a.fas.fa-edit{href:"/"}
-      %a.fas.fa-cog{href:"/"}
+      %a.fas.fa-cog{href:edit_user_path(current_user)}
   = render partial: "sideber__group"
   = render partial: "sideber__group"
   = render partial: "sideber__group"
