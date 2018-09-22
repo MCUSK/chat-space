@@ -10,12 +10,10 @@
         member
       = link_to "Edit", edit_group_path(1), class:"edit btn"
     .chat
-      = render partial: "chatlog"
-      = render partial: "chatlog"
-      = render partial: "chatlog"
+      = render partial: "message", collection: @messages
     .massage
-      =form_for "", :html => {:class => "massage__form"} do |f|
-        =f.text_field :massage, class:"text_field",placeholder:"type a massage"
+      =form_for [@group, @message], :html => {:class => "massage__form"} do |f|
+        =f.text_field :content, class:"text_field",placeholder:"type a massage"
         %label.upload-label{for: "upload-icon"}
           %i.far.fa-image.fa-lg
           = f.file_field :image, id: "upload-icon"
