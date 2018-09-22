@@ -10,20 +10,22 @@
     font-size: 16px;
     background-color: #253141;
     font-weight: bold;
-  }
+    }
   &__group{
-    @include box;
-    height: 91px;
-    padding: 20px;
-      &__name{
-      font-size: 15px;
-    }
-      &__text{
-      padding-top:5px;
-      font-size: 11px;
-    }
+  @include box;
   }
 }
+
+.group__name{
+    padding-top: 20px;
+    font-size: 15px;
+    color: $text-white;
+  }
+.group__message{
+    padding: 5px 0 20px;
+    font-size: 11px;
+    color: $text-white;
+  }
 
 .icon{
   margin-left: auto;

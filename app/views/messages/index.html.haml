@@ -1,5 +1,5 @@
 / %header チャットグループが作成されました
-#wrapper
+.wrapper
   = render partial: "sideber"
 
   .right-contents
@@ -8,7 +8,7 @@
         sampleグループ
       .groupber__member
         member
-      = link_to "Edit", "/",class:"edit btn"
+      = link_to "Edit", edit_group_path(1), class:"edit btn"
     .chat
       = render partial: "chatlog"
       = render partial: "chatlog"
