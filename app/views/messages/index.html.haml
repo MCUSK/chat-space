@@ -5,9 +5,10 @@
   .right-contents
     .groupber
       .groupber__name
-        sampleグループ
+        = @group.name
       .groupber__member
-        member
+        - @group.users.each do |user|
+          = "【#{user.name}】"
       = link_to "Edit", edit_group_path(1), class:"edit btn"
     .chat
       = render partial: "message", collection: @messages
