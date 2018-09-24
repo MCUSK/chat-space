@@ -9,13 +9,17 @@
       .groupber__member
         - @group.users.each do |user|
           = "【#{user.name}】"
-      = link_to "Edit", edit_group_path(1), class:"edit btn"
+      = link_to "Edit", edit_group_path(@group.id), class:"edit btn"
     .chat
       = render partial: "message", collection: @messages
+
+
     .massage
-      =form_for [@group, @message], :html => {:class => "massage__form"} do |f|
-        =f.text_field :content, class:"text_field",placeholder:"type a massage"
+      =form_for [@group, @message], html: {class:"massage__form"} do |f|
+        =f.text_field :content, class:"text_field", placeholder:"type a massage"
+
         %label.upload-label{for: "upload-icon"}
           %i.far.fa-image.fa-lg
           = f.file_field :image, id: "upload-icon"
+
         =f.submit :Send, class:"submit btn"
