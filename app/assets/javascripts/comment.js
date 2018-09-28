@@ -28,9 +28,10 @@ $(document).on('turbolinks:load', function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat').append(html)
-      $(".chat").animate({scrollTop: 65636},150);
+      $(".chat").animate({scrollTop: $(".chat").get(0).scrollHeight},150);
       $(".submit").prop("disabled", false);
       $('.text_field').val('')
+      $('#upload-icon').val('')
     })
     .fail(function(){
       $(".submit").prop("disabled", false);
