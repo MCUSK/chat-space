@@ -13,9 +13,10 @@
     .chat
       = render partial: "message", collection: @messages
     .massage
-      =form_for [@group, @message], :html => {:class => "massage__form"} do |f|
+      =form_for [@group, @message], html: {class: "massage__form"} do |f|
         =f.text_field :content, class:"text_field",placeholder:"type a massage"
         %label.upload-label{for: "upload-icon"}
           %i.far.fa-image.fa-lg
           = f.file_field :image, id: "upload-icon"
         =f.submit :Send, class:"submit btn"
+
