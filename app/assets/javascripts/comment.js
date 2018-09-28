@@ -29,9 +29,8 @@ $(document).on('turbolinks:load', function(){
       var html = buildHTML(data);
       $('.chat').append(html)
       $(".chat").animate({scrollTop: $(".chat").get(0).scrollHeight},150);
+      $(".massage__form").get(0).reset();
       $(".submit").prop("disabled", false);
-      $('.text_field').val('')
-      $('#upload-icon').val('')
     })
     .fail(function(){
       $(".submit").prop("disabled", false);
