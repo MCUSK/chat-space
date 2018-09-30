@@ -1,6 +1,6 @@
 $(function() {
 
-var search_result =$("#user-search-result") //
+var search_result =$("#user-search-result")
 
 function appendUsers(user) {
    var html =`<div class="chat-group-user clearfix">
@@ -19,7 +19,6 @@ function appendNoUser(user){
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    console.log(input)
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -27,7 +26,6 @@ function appendNoUser(user){
       dataType: 'json'
     })
    .done(function(users) {
-    console.log("next")
      $("#user-search-result").empty();
      if (users.length !== 0) {
        users.forEach(function(users){
