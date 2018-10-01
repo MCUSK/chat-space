@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function(){
 $(function() {
 
 var search_result =$("#user-search-result")
@@ -19,7 +20,7 @@ function appendNoUser(user){
 
 function addUser(name, id) {
    var html =`<div class="chat-group-user clearfix">
-                <input type="hidden" name="group[user_ids][] value="${id}">
+                <input type="hidden" name="group[user_ids][]" value="${id}">
                 <p class="chat-group-user__name">${name}</p>
                 <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
               </div>`
@@ -58,8 +59,9 @@ function addUser(name, id) {
   });
 
   $(".chat-group-form__field--right").on("click", ".chat-group-user__btn--remove", function(){
-    $(this).parent().hide()
+    $(this).parent().remove()
   });
+});
 })
 
 
