@@ -1,6 +1,10 @@
 $(function() {
   //非同期通信
   function buildHTML(message){
+      var chat_image =""
+      if(message.image) {
+      chat_image = `<img src=${message.image} class="lower-message__image" alt="">`;
+      }
       var html = `<div class="chat_field" data-message-id = "${message.id}">
       <div class="chat__user">
       ${message.name}
@@ -11,7 +15,7 @@ $(function() {
       <div class="chat__text">
       ${message.content}<br>
       </div>
-      <img src=${message.image} class="lower-message__image" alt="">
+      ${chat_image}
       </div>`
       return html;
     }
