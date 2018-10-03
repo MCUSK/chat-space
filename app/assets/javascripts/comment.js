@@ -1,7 +1,7 @@
 $(function() {
   //非同期通信
   function buildHTML(message){
-      var html = `<div class="chat_filed" data-message-id = "${message.id}">
+      var html = `<div class="chat_field" data-message-id = "${message.id}">
       <div class="chat__user">
       ${message.name}
       <span>
@@ -11,6 +11,7 @@ $(function() {
       <div class="chat__text">
       ${message.content}<br>
       </div>
+      <img src=${message.image} class="lower-message__image" alt="">
       </div>`
       return html;
     }
@@ -43,17 +44,15 @@ $(function() {
 
 //自動更新
   var interval = setInterval(reload,5000);
-  var last_id = $('.chat_field').last().data('message-id');
   function reload(){
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      var last_id = $('.chat_field').last().data('message-id');
     $.ajax({
         url:  window.location.href,
         dataType:  'json',
         data: {id: last_id}
       })
       .done(function(messages) {
-        console.log(messages)
-        console.log(last_id)
         messages.forEach(function(message){
         $(".chat").append(buildHTML(message));
         $(".chat").animate({scrollTop: $(".chat").get(0).scrollHeight}, 150);
