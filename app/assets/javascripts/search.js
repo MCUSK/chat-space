@@ -1,4 +1,3 @@
-$(document).on('turbolinks:load', function(){
 $(function() {
 
 var search_result =$("#user-search-result")
@@ -62,7 +61,5 @@ function addUser(name, id) {
     $(this).parent().remove()
   });
 });
-})
-
 
 
